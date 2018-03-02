@@ -11,11 +11,17 @@ git:
 install:
   - yarn global add @rispa/test-utils@latest
 
-script:
+env:
+ - CI_ACCEPTANCE=true
+
+before_script:
   - ris-test-utils init
+
+script:
   - ris-test-utils run @rispa/ui-kit lint
   - ris-test-utils run @rispa/ui-kit stylelint
   - ris-test-utils run @rispa/ui-kit test:coverage
+  - ris-test-utils acceptance storybook-build
 
 notifications:
   slack:
