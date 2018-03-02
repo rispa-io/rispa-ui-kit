@@ -1,5 +1,7 @@
 # Rispa UI-Kit [![Build Status](https://api.travis-ci.org/rispa-io/rispa-ui-kit.svg?branch=master)](https://travis-ci.org/rispa-io/rispa-ui-kit)
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/rispa-io/rispa-ui-kit.svg)](https://greenkeeper.io/)
+
 * [User Guide](https://github.com/rispa-io/rispa-core) – How to develop apps bootstrapped with **Rispa**.
 
 
