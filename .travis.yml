@@ -9,7 +9,7 @@ git:
   depth: 1
 
 env:
-  - DEBUG=*
+  - DEBUG=*,!follow-redirects
 
 install:
   - yarn global add @rispa/cli@latest
