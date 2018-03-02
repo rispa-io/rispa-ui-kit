@@ -1,7 +1,7 @@
 {
   "name": "@rispa/ui-kit",
   "rispa:name": "react-ui",
-  "version": "4.1.9",
+  "version": "4.2.0",
   "description": "Rispa React ui-kit",
   "rispa:activator": "./activator/index.js",
   "rispa:generators": "./generators/index.js",
@@ -46,9 +46,9 @@
     "webpack-hot-middleware": "^2.18.0"
   },
   "dependencies": {
-    "@rispa/core": "4.1.x",
-    "@rispa/render-server": "4.1.x",
-    "@rispa/webpack": "4.1.x",
+    "@rispa/core": "4.2.x",
+    "@rispa/render-server": "4.2.x",
+    "@rispa/webpack": "4.2.x",
     "autoprefixer": "^7.1.6",
     "classnames": "^2.2.5",
     "fbjs": "^0.8.16",
