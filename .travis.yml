@@ -8,6 +8,9 @@ sudo: false
 git:
   depth: 1
 
+env:
+  - DEBUG=*
+
 install:
   - yarn global add @rispa/cli@latest
   - yarn global add @rispa/test-utils@latest
