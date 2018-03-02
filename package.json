@@ -1,7 +1,7 @@
 {
   "name": "@rispa/ui-kit",
   "rispa:name": "react-ui",
-  "version": "4.2.0",
+  "version": "4.2.1",
   "description": "Rispa React ui-kit",
   "rispa:activator": "./activator/index.js",
   "rispa:generators": "./generators/index.js",
