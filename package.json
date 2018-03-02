@@ -23,6 +23,7 @@
   },
   "devDependencies": {
     "@rispa/eslint-config": ">=3.0.0",
+    "@rispa/babel": "4.1.x",
     "@kadira/react-storybook-addon-info": "^3.4.0",
     "@kadira/storybook": "^2.35.3",
     "@kadira/storybook-addon-comments": "^1.9.1",
