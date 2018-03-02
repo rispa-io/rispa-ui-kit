@@ -12,7 +12,7 @@ const createStorybookConfig = storiesContexts => {
 
   fs.writeFileSync(
     configPath,
-    configContent.replace('// {storiesContexts}', stories.join(',\n')),
+    configContent.replace('// {storiesContexts}', stories.join(',  \n')),
   )
 }
 
