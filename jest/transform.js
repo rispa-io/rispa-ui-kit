@@ -1,4 +1,4 @@
 const babelJest = require('babel-jest')
-const getBabelConfig = require('@rispa/babel/config')
+const babelConfig = require('@rispa/babel/config')
 
-module.exports = babelJest.createTransformer(getBabelConfig())
+module.exports = babelJest.createTransformer(babelConfig)

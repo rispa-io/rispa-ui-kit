@@ -4,11 +4,11 @@ class UiKitPluginApi extends PluginApi {
   static startHandler(context) {
     const instance = context.get(UiKitPluginApi.pluginName)
 
-    return instance.createStoriesContexts()
+    return instance.createStorybookConfig()
   }
 
-  createStoriesContexts() {
-    this.instance.createStoriesContexts()
+  createStorybookConfig() {
+    this.instance.createStorybookConfig()
   }
 
   addStories(stories) {

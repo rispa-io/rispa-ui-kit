@@ -1,10 +1,10 @@
 const path = require('path')
-const fs = require('fs')
 const { PluginInstance } = require('@rispa/core')
 const WebpackPluginApi = require('@rispa/webpack')
 const RenderServerPluginApi = require('@rispa/render-server')
 const commonWebpackConfig = require('./webpack/common.wpc')
 const ssrCache = require('../ssr-cache')
+const createStorybookConfig = require('../.storybook/createConfig')
 
 class UiKitPlugin extends PluginInstance {
   constructor(context) {
@@ -29,20 +29,8 @@ class UiKitPlugin extends PluginInstance {
     this.storiesContexts = this.storiesContexts.concat(stories)
   }
 
-  createStoriesContexts() {
-    const stories = this.storiesContexts
-      .map(context => context.replace(/\\/g, '/'))
-      .map(context => `require.context('${context}', true, /.stories.js$/)`)
-
-    const configFolder = path.resolve(__dirname, '../.storybook/')
-    const configTemplatePath = `${configFolder}/config.template.js`
-    const configPath = `${configFolder}/config.js`
-    const configContent = String(fs.readFileSync(configTemplatePath))
-
-    fs.writeFileSync(
-      configPath,
-      configContent.replace('// {storiesContexts}', stories.join(',\n')),
-    )
+  createStorybookConfig() {
+    createStorybookConfig(this.storiesContexts)
   }
 }
 
