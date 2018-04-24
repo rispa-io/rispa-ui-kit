@@ -1,6 +1,8 @@
 const path = require('path')
-const babelrcConfig = require('@rispa/babel/lib/babelConfig').default
+const fs = require('fs-extra')
 const commonLoaders = require('../activator/webpack/common-loaders')
+
+const babelConfig = fs.readJsonSync(path.resolve(__dirname, '../.babelrc'))
 
 const babelLoader = require.resolve('babel-loader')
 
@@ -22,7 +24,7 @@ module.exports = baseConfig => Object.assign(
           test: /\.js$/,
           exclude: /node_modules/,
           loaders: [
-            `${babelLoader}?${JSON.stringify(babelrcConfig)}`,
+            `${babelLoader}?${JSON.stringify(babelConfig)}`,
           ],
         },
         {
