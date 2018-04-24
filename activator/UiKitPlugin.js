@@ -41,7 +41,7 @@ class UiKitPlugin extends PluginInstance {
 
     fs.writeFileSync(
       configPath,
-      configContent.replace('// {storiesContexts}', stories.join(',\n')),
+      configContent.replace('// {storiesContexts}', stories.join(',\n  ')),
     )
   }
 }
