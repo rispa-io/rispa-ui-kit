@@ -43,7 +43,7 @@
     "stylelint": "^7.10.1",
     "plop": "^1.7.4",
     "stylelint-config-standard": "^16.0.0",
-    "webpack-hot-middleware": "^2.18.0"
+    "webpack-hot-middleware": "^2.24.3"
   },
   "dependencies": {
     "@rispa/core": "4.2.x",

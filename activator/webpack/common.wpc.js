@@ -7,7 +7,7 @@ const postcssLoader = require.resolve('postcss-loader')
 const classNamesLoader = path.resolve(__dirname, './classnames-loader.js')
 const postcssConfigPath = path.resolve(__dirname, '../../postcss.config.js')
 
-module.exports = () => ({
+module.exports = (context, { merge }) => merge({
   entry: {
     vendor: [
       path.resolve(__dirname, '../../styles/base.sss'),
