@@ -1,5 +1,5 @@
 {
   "presets": [
-    "@rispa/babel/config"
+    "@rispa/babel/preset-app"
   ]
 }

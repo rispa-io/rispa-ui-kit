@@ -1,2 +1,12 @@
-import '@kadira/storybook/addons'
-import '@kadira/storybook-addon-knobs/register'
+import '@storybook/addons'
+import '@storybook/addon-knobs/register'
+import '@storybook/addon-actions/register'
+import '@storybook/addon-viewport/register'
+import '@storybook/addon-a11y/register'
+import '@storybook/addon-storysource/register'
+import '@storybook/addon-notes/register'
+import '@storybook/addon-options/register'
+import '@storybook/addon-backgrounds/register'
+import '@storybook/addon-cssresources/register'
+
+

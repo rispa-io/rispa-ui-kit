@@ -1,1 +1,1 @@
-export { default, storiesOf, action } from '@kadira/storybook'
+export { default, storiesOf, action } from '@storybook/react'

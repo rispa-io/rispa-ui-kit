@@ -1,20 +1,30 @@
-import { configure, addDecorator, setAddon } from '@kadira/storybook'
-import backgrounds from 'react-storybook-addon-backgrounds'
-import infoAddon, { setDefaults } from '@kadira/react-storybook-addon-info'
-import { withKnobs } from '@kadira/storybook-addon-knobs'
+import { configure, addDecorator, setAddon } from '@storybook/react'
+import { withBackgrounds } from '@storybook/addon-backgrounds'
+import infoAddon, { setDefaults, withInfo } from '@storybook/addon-info'
+import { withKnobs } from '@storybook/addon-knobs'
+import { withOptions } from '@storybook/addon-options'
+import { withNotes } from '@storybook/addon-notes'
+import { themes } from '@storybook/components'
 
 const isTest = process.env.NODE_ENV === 'test'
 
 const addAll = () => {
-  addDecorator(backgrounds([
+  addDecorator(withBackgrounds([
     { name: 'White', value: '#fff', default: true },
     { name: 'Black Magic', value: '#333' },
   ]))
+  addDecorator(
+    withOptions({
+      theme: themes.dark,
+    })
+  )
 
   setDefaults({ header: false, inline: true })
   setAddon(infoAddon)
 
   addDecorator(withKnobs)
+  addDecorator(withInfo)
+  addDecorator(withNotes)
 }
 
 const addTest = () => {
