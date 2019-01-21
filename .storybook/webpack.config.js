@@ -1,21 +1,12 @@
 const path = require('path')
+const fs = require('fs-extra')
 const commonLoaders = require('../activator/webpack/common-loaders')
 
 const babelLoader = require.resolve('babel-loader')
 
 const classNamesLoader = path.resolve(__dirname, '../activator/webpack/classnames-loader.js')
 
-const babelrcConfig = {
-  "presets": [
-    [
-      "@babel/preset-env",
-      {
-        modules: false
-      },
-      '@babel/preset-react'
-    ]
-  ]
-}
+const babelrcConfig = fs.readJsonSync(path.resolve(__dirname, '../.babelrc'))
 
 module.exports = baseConfig => Object.assign(
   {},
