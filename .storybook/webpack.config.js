@@ -1,38 +1,45 @@
 const path = require('path')
-const babelrcConfig = require('@rispa/babel/lib/babelConfig').default
+const fs = require('fs-extra')
 const commonLoaders = require('../activator/webpack/common-loaders')
 
 const babelLoader = require.resolve('babel-loader')
 
 const classNamesLoader = path.resolve(__dirname, '../activator/webpack/classnames-loader.js')
 
+const babelrcConfig = fs.readJsonSync(path.resolve(__dirname, '../.babelrc'))
+
 module.exports = baseConfig => Object.assign(
   {},
   baseConfig,
   {
     resolve: {
-      modulesDirectories: [
+      modules: [
         'node_modules',
       ],
-      extensions: ['.json', '.js', ''],
+      extensions: ['.json', '.js', '*'],
     },
     module: {
-      loaders: commonLoaders.concat([
+      rules: commonLoaders.concat([
         {
           test: /\.js$/,
           exclude: /node_modules/,
-          loaders: [
+          use: [
             `${babelLoader}?${JSON.stringify(babelrcConfig)}`,
           ],
         },
         {
           test: /\.sss$/,
-          loaders: [
+          use: [
             classNamesLoader,
             'style-loader',
             'css-loader?modules=true&importLoaders=1&localIdentName=[name]_[local]',
             'postcss-loader',
           ],
+        },
+        {
+          test: /\.stories\.jsx?$/,
+          loaders: [require.resolve('@storybook/addon-storysource/loader')],
+          enforce: 'pre',
         },
       ]),
     },

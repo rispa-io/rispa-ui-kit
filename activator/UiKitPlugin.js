@@ -4,7 +4,6 @@ const { PluginInstance } = require('@rispa/core')
 const WebpackPluginApi = require('@rispa/webpack')
 const RenderServerPluginApi = require('@rispa/render-server')
 const commonWebpackConfig = require('./webpack/common.wpc')
-const ssrCache = require('../ssr-cache')
 
 class UiKitPlugin extends PluginInstance {
   constructor(context) {
@@ -21,8 +20,6 @@ class UiKitPlugin extends PluginInstance {
 
   start() {
     this.webpack.addCommonConfig(commonWebpackConfig)
-
-    this.renderServer.setCache(ssrCache)
   }
 
   addStories(stories) {
